@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 def load_dataset(filepath):
-    df = pd.read_csv(filepath, index_col=0)
+    df = pd.read_csv(filepath, index_col=False)
     return df
 
 
