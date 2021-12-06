@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
+
 def load_dataset(filepath):
     df = pd.read_csv(filepath, index_col=False)
     return df
@@ -71,6 +72,16 @@ def apply_pca(dataframe, verbose=False):
     return pca, pca.transform(dataframe)
 
 
+def correct_dataset(dataframe):
+    dataframe.loc[dataframe['global_subjectivity'] < 0, 'global_subjectivity'] = 0
+    dataframe.loc[dataframe['global_subjectivity'] > 1, 'global_subjectivity'] = 1
+
+    for column in dataframe.columns:
+        if 'polarity' in column:
+            dataframe.loc[dataframe[column] < -1, column] = -1
+            dataframe.loc[dataframe[column] > 1, column] = 1
+
+    return dataframe
 
 
 features_2_standardise = ['age_days',
