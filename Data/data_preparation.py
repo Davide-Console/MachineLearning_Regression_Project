@@ -90,8 +90,6 @@ def outlier2whisker(dataframe, features):
     df = pd.DataFrame(dataframe)
     for column in features:
 
-        outliers = [y for stat in boxplot_stats(dataframe[column]) for y in stat['fliers']]
-
         stat = boxplot_stats(dataframe[column])
         whisk_lo = stat[0].get('whislo')
         whisk_hi = stat[0].get('whishi')
