@@ -23,7 +23,7 @@ def main():
     dataframe, scaler = standardise(dataframe, features_s, verbose=False)
 
     # Splitting dataframe according to a given threshold
-    threshold = 10000
+    threshold = 50000
     dataframe_wo_outliers = dataframe[dataframe['likes'] <= threshold]
     dataframe_outliers = dataframe[dataframe['likes'] > threshold]
 
