@@ -12,6 +12,6 @@
 
 - Open a command prompt and execute:
     ```console
-    git clone https://github.com/Davide-Console/MachineLearning_Regression_Project.com.git
+    git clone https://github.com/Davide-Console/MachineLearning_Regression_Project.git
     conda install --file requirements.txt
     ```
