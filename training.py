@@ -26,12 +26,12 @@ def hyperp_search(classifier, parameters, dataframe_wo_outliers, dataframe_outli
     y = dataframe_wo_outliers['likes']
 
     # Splitting data set in train set and test set
-    test_size = 0.25948
+    test_size = 0.2964
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=313)
 
     # Computing the proper amount of 'likes' outliers to expect in the prediction test according to the chosen threshold
-    n_outliers = ceil((len(X_test)*0.0547)/0.9453)
+    n_outliers = ceil((len(X_test)*0.00511)/0.99489)
 
     dataframe_outliers = dataframe_outliers.sort_values(by='likes', ascending=False)
 
