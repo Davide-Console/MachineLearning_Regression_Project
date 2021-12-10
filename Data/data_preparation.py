@@ -94,7 +94,7 @@ def outlier2whisker(dataframe, features):
         whisk_lo = stat[0].get('whislo')
         whisk_hi = stat[0].get('whishi')
 
-        df[column] = dataframe[column].where(dataframe[column] >= whisk_lo, other=whisk_lo-whisk_lo/10, inplace=False)
+        df[column] = dataframe[column].where(dataframe[column] >= whisk_lo, other=whisk_lo-abs(whisk_lo/10), inplace=False)
         df[column] = dataframe[column].where(dataframe[column] <= whisk_hi, other=whisk_hi+whisk_hi/10, inplace=False)
 
     return df
